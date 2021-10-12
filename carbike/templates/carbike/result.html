@@ -1,0 +1,32 @@
+{% extends 'carbike/base.html' %}
+{% block title %}Result of definition{% endblock %}
+
+{% block content %}
+<div>
+    <h4 class="mt-4 mb-5 border-bottom">Result of definition</h4>
+
+    <table class='table'>
+        <tbody>
+            <tr>
+                <td>File name</td>
+                <td>{{ photo_name }}</td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td><img class='preview-img' src={{ photo_data }} ></img></td>
+                </tr>
+            <tr>
+                <td>Predicted label</td>
+                <td>{{ predicted }}</td>
+            </tr>
+            <tr>
+                <td>Predicted percentage</td>
+                <td>{{ percentage }} %</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href = "{% url 'carbike:index' %}" class="btn btn-primary">Back</a>
+
+</div>
+{% endblock %}
